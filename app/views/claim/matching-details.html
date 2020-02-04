@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    serviceName: serviceName,
+    serviceUrl: "/",
+    navigation: [
+      {
+        href: "/admin/claims",
+        text: "Claims",
+        attributes: {
+          "data-install": "Claims"
+        }
+      },
+      {
+        href: "/admin/claims/search",
+        text: "Search",
+        attributes: {
+          "data-tutorials": "Search"
+        }
+      },
+      {
+        href: "/admin/payroll_runs",
+        text: "Payroll",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/policy_configurations",
+        text: "Open/close a service",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/auth/sign-out",
+        text: "Sign out",
+        attributes: {
+          "data-about": "Sign out"
+        }
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/claim-header-block.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <table id="claims-with-matches" class="govuk-table govuk-!-margin-bottom-9">
+            <caption class="govuk-table__caption govuk-heading-l">Claims with matching details</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Claim</th>
+                <th scope="col" class="govuk-table__header">Matching details</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"><a class="govuk-link" href="/admin/claims/eb063e7e-4902-4fc7-9691-a97f05888694">6Y9U2V9D</a>
+                  </th><td class="govuk-table__cell">
+                    <ul class="govuk-list">
+                      <li>Building society roll number</li>
+                      <li>National insurance number</li>
+                    </ul>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,244 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    serviceName: serviceName,
+    serviceUrl: "/",
+    navigation: [
+      {
+        href: "/admin/claims",
+        text: "Claims",
+        attributes: {
+          "data-install": "Claims"
+        }
+      },
+      {
+        href: "/admin/claims/search",
+        text: "Search",
+        attributes: {
+          "data-tutorials": "Search"
+        }
+      },
+      {
+        href: "/admin/payroll_runs",
+        text: "Payroll",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/policy_configurations",
+        text: "Open/close a service",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/auth/sign-out",
+        text: "Sign out",
+        attributes: {
+          "data-about": "Sign out"
+        }
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<a class="govuk-back-link" href="/admin">Back</a>
+
+{% include "includes/claim-header-block.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">   
+
+    <h2 class="govuk-heading-l">
+      Qualifications
+    </h2>
+    <p class="govuk-body-l">Check the claimant qualified in an eligible academic year.</p>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Award year
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            In or after the academic year 2013 to 2014
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Subjects
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            Biology
+          </dd>
+        </div>
+        
+    </dl>
+    <a href="employment-loan-check.html" class="govuk-button">Complete qualifications check</a>
+  </div>
+  <div class="govuk-grid-column-one-half">   
+
+
+    <h2 class="govuk-heading-l">
+      Employment and student loan
+    </h2>
+    <p class="govuk-body-l">Check the claimant works in an eligible school, the student loan amount is within the set threshold and the plan type is correct.</p>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            2018/2019 school
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            Penistone Grammar School
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current school
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            Barnsley Academy
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Student loan
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            £456
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Student loan plan
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            Plan 1
+          </dd>
+        </div>
+    </dl>
+
+    <a href="employment-loan-check.html" class="govuk-button">Complete employment check</a>
+  </div>
+
+  <div class="govuk-grid-row">
+   <div class="govuk-grid-column-one-half">   
+
+    <h2 class="govuk-heading-l">
+      Current school and subject
+    </h2>
+    <p class="govuk-body-l">Check the claimant teaches the stated subject.</p>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Check sent
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            12/01/2020 3:49pm
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Check expires
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            19/01/2020 3:49pm
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Sent to
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            head@penistonegrammar.edu.uk
+          </dd>
+        </div>
+        
+    </dl>
+
+    <a href="employment-loan-check.html" class="govuk-button">Complete school and subject check</a>
+
+          <table id="claims-with-matches" class="govuk-table govuk-!-margin-bottom-9">
+            <caption class="govuk-table__caption govuk-heading-l">Claims with matching details</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Claim</th>
+                <th scope="col" class="govuk-table__header">Matching details</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"><a class="govuk-link" href="/admin/claims/eb063e7e-4902-4fc7-9691-a97f05888694">6Y9U2V9D</a>
+                  </th><td class="govuk-table__cell">
+                    <ul class="govuk-list">
+                      <li>Building society roll number</li>
+                      <li>National insurance number</li>
+                    </ul>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              This claim cannot currently be approved because we’re already paying another claim (S15HYQL4) to this claimant in this payroll month using different payment details. Please speak to a Grade 7.
+            </strong>
+          </div>
+
+          <form class="new_check" id="claim_check_form" action="/admin/claims/b15b39f1-163b-41b6-b767-95144f961c25/checks" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+                  <h2 class="govuk-fieldset__heading">
+                    Claim decision
+                  </h2>
+                </legend>
+
+
+                
+                <div class="govuk-radios">
+                  <input type="hidden" name="check[result]" id="check_result">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" disabled="disabled" type="radio" value="approved" name="check[result]" id="check_result_approved">
+                    <label class="govuk-label govuk-radios__label" for="check_result_approved">Approve</label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" type="radio" value="rejected" name="check[result]" id="check_result_rejected">
+                    <label class="govuk-label govuk-radios__label" for="check_result_rejected">Reject</label>
+                  </div>
+                </div>
+              </fieldset>
+              <label class="govuk-label govuk-label--m" for="check_notes">Decision notes</label>
+              <span class="govuk-hint" id="notes-hint">
+                Please write a brief note explaining why this claim has been rejected or approved.
+              </span>
+              <textarea class="govuk-textarea" aria-describedby="notes-hint" rows="5" name="check[notes]" id="check_notes"></textarea>
+              <input type="submit" name="commit" value="Submit" class="govuk-button" data-disable-with="Submit">
+    </div></form>  
+  </div>
+</div>
+
+{% endblock %}

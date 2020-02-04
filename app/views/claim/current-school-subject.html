@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    serviceName: serviceName,
+    serviceUrl: "/",
+    navigation: [
+      {
+        href: "/admin/claims",
+        text: "Claims",
+        attributes: {
+          "data-install": "Claims"
+        }
+      },
+      {
+        href: "/admin/claims/search",
+        text: "Search",
+        attributes: {
+          "data-tutorials": "Search"
+        }
+      },
+      {
+        href: "/admin/payroll_runs",
+        text: "Payroll",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/policy_configurations",
+        text: "Open/close a service",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/auth/sign-out",
+        text: "Sign out",
+        attributes: {
+          "data-about": "Sign out"
+        }
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/claim-header-block.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-heading-l">
+      Current school and subject
+    </h2>
+    <p class="govuk-body-l">Check the claimant teaches the stated subject.</p>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Check sent
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            12/01/2020 3:49pm
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Check expires
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            19/01/2020 3:49pm
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Sent to
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            head@penistonegrammar.edu.uk
+          </dd>
+        </div>
+        
+    </dl>
+
+    <a href="employment-loan-check.html" class="govuk-button">Complete school and subject check</a>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    serviceName: serviceName,
+    serviceUrl: "/",
+    navigation: [
+      {
+        href: "/admin/claims",
+        text: "Claims",
+        attributes: {
+          "data-install": "Claims"
+        }
+      },
+      {
+        href: "/admin/claims/search",
+        text: "Search",
+        attributes: {
+          "data-tutorials": "Search"
+        }
+      },
+      {
+        href: "/admin/payroll_runs",
+        text: "Payroll",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/policy_configurations",
+        text: "Open/close a service",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/auth/sign-out",
+        text: "Sign out",
+        attributes: {
+          "data-about": "Sign out"
+        }
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/claim-header-block.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">
+      Employment and student loan
+    </h2>
+    <p class="govuk-body-l">Check the claimant works in an eligible school, the student loan amount is within the set threshold and the plan type is correct.</p>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            2018/2019 school
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            Penistone Grammar School
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current school
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            Barnsley Academy
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Student loan
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            £456
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Student loan plan
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            Plan 1
+          </dd>
+        </div>
+    </dl>
+
+    <a href="employment-loan-check.html" class="govuk-button">Complete employment check</a>
+
+    </div>
+  </div>
+
+{% endblock %}
