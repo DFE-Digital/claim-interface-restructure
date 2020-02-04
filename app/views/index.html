@@ -1,44 +1,76 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
+
+      <h1 class="govuk-heading-xl">Claim checking #2 prototype</h1>
+
+      <p class="govuk-body-l">
+        This prototype is an example of how claim checking in the admin interface can be made quicker and easier.
       </p>
-
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-        <li>
-          <a href="https://design-system.service.gov.uk">
-            GOV.UK Design System
-          </a>
-        </li>
-      </ul>
+{{releaseVersion | log }}
     </div>
-</div>
 
+
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--visible">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
+
+      <h2 class="govuk-heading-m"><a href="/claims" data-hinstall="View claim">All claims</a></h2>
+      <p>
+        A list of all the claims
+      </p>
+
+    </div>
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
+
+      <h2 class="govuk-heading-m"><a href="/claim" data-hinstall="View claim">View claim</a></h2>
+      <p>
+        What a user sees when you click "View claim"
+      </p>
+
+    </div>
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
+
+      <h2 class="govuk-heading-m"><a href="/claim/qualifications" data-habout="Qualifications">Qualifications</a></h2>
+      <p>
+        How to check qualifications
+      </p>
+
+    </div>
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
+
+      <h2 class="govuk-heading-m"><a href="/claim/employment" data-habout="Employment">Employment</a></h2>
+      <p>
+        How to check employment
+      </p>
+
+    </div>
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
+
+      <h2 class="govuk-heading-m"><a href="/claim/current-school-subject" data-habout="Current school and subject check">Current school and subject check</a></h2>
+      <p>
+        How to check current school and qualifications
+      </p>
+
+    </div>
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
+
+      <h2 class="govuk-heading-m"><a href="/claim/matching-details" data-habout="Matching details">Matching details</a></h2>
+      <p>
+        How to check matching details
+      </p>
+
+    </div>
+
+  </div>
 {% endblock %}
