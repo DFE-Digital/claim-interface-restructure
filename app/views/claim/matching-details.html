@@ -60,24 +60,58 @@
 {% set email = "freddysmith@gmail.com" %}{% include "includes/claim-header-block.html" %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
-        <table id="claims-with-matches" class="govuk-table govuk-!-margin-bottom-9">
-            <caption class="govuk-table__caption govuk-heading-l">Claims with matching details</caption>
+        <h2 class="govuk-heading-l">Review matching details from other claims</h2>
+        <table id="claims-with-matches" class="govuk-table govuk-!-margin-bottom-9 ">
+            <caption class="govuk-table__caption govuk-body-l">Check why some details in the claim match those in another claim.</caption>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Claim</th>
-                <th scope="col" class="govuk-table__header">Matching details</th>
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header">This claim<br />ABN7HAAH</th>
+                <th scope="col" class="govuk-table__header">Matched claim<br/><a href="#">6Y9U2V9D</a></th>
+                <th scope="col" class="govuk-table__header"></th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header"><a class="govuk-link" href="/admin/claims/eb063e7e-4902-4fc7-9691-a97f05888694">6Y9U2V9D</a>
-                  </th><td class="govuk-table__cell">
-                    <ul class="govuk-list">
-                      <li>Building society roll number</li>
-                      <li>National insurance number</li>
-                    </ul>
+                  <th scope="row" class="govuk-table__header">Teacher Reference Number
+                  </th>
+                  <td class="govuk-table__cell">
+                    6728374
+                  </td>
+                  <td class="govuk-table__cell">
+                    6728374
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">National Insurance Number
+                  </th>
+                  <td class="govuk-table__cell">
+                    QQ123456C
+                  </td>
+                  <td class="govuk-table__cell">
+                    QQ123456C
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Full name
+                  </th>
+                  <td class="govuk-table__cell">
+                    Fred Smith
+                  </td>
+                  <td class="govuk-table__cell">
+                    Fred Smith
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                  </th>
+                  <td class="govuk-table__cell">
+                    
+                  </td>
+                  <td class="govuk-table__cell">
+                    <a href="#">View full claim</a>
                   </td>
                 </tr>
             </tbody>
