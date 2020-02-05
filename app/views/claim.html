@@ -12,7 +12,7 @@
     serviceUrl: "/",
     navigation: [
       {
-        href: "/admin/claims",
+        href: "/claims",
         text: "Claims",
         attributes: {
           "data-install": "Claims"
@@ -53,6 +53,11 @@
 {% block content %}
 
 {% set service_name = "Teachers: claim back your student loan repayments" %}
+{% set reference = "ABN7HA" %}
+{% set trn = "2783017" %}
+{% set name = "Fred Smith" %}
+{% set dob = "21/08/1979" %}
+{% set email = "freddysmith@gmail.com" %}
 {% include "includes/claim-header-block.html" %}
 
   <div class="govuk-grid-row">

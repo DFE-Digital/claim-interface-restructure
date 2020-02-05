@@ -12,10 +12,10 @@
     serviceUrl: "/",
     navigation: [
       {
-        href: "/admin/claims",
-        text: "Claims",
+        href: "/claims",
+        text: "View claims",
         attributes: {
-          "data-install": "Claims"
+          "data-install": "View claims"
         }
       },
       {
@@ -52,7 +52,14 @@
 
 {% block content %}
 
+
 {% set service_name = "Claim a payment for teaching maths or physics" %}
+{% set reference = "AH6RHG1" %}
+{% set trn = "2718203" %}
+{% set name = "Leona Shepherd" %}
+{% set dob = "26/02/1985" %}
+{% set email = "leonasheps@hotmail.com" %}
+
 {% include "includes/claim-header-block.html" %}
 
   <div class="govuk-grid-row">
@@ -70,7 +77,7 @@
                   Check qualification eligibility
                 </a>
               </span>
-              <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+              
             </li>
           </ul>
         </li>
@@ -85,7 +92,7 @@
                   Check employment eligibility
                 </a>
               </span>
-              <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
+              
             </li>
           </ul>
         </li>

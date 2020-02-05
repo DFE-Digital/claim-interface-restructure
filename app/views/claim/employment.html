@@ -12,10 +12,10 @@
     serviceUrl: "/",
     navigation: [
       {
-        href: "/admin/claims",
-        text: "Claims",
+        href: "/claims",
+        text: "View claims",
         attributes: {
-          "data-install": "Claims"
+          "data-install": "View claims"
         }
       },
       {
@@ -52,7 +52,12 @@
 
 {% block content %}
 
-{% include "includes/claim-header-block.html" %}
+{% set service_name = "Teachers: claim back your student loan repayments" %}
+{% set reference = "ABN7HA" %}
+{% set trn = "2783017" %}
+{% set name = "Fred Smith" %}
+{% set dob = "21/08/1979" %}
+{% set email = "freddysmith@gmail.com" %}{% include "includes/claim-header-block.html" %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -101,7 +106,7 @@
         </div>
     </dl>
 
-    <a href="employment-loan-check.html" class="govuk-button">Complete employment check</a>
+    <a href="./current-school-subject" class="govuk-button">Complete employment check and continue</a>
 
     </div>
   </div>

@@ -3,7 +3,7 @@
     <a class="govuk-back-link" href="/claims">Back</a>
     <span class="govuk-caption-xl">{{ service_name }}</span>
     <h1 class="govuk-heading-xl">
-        YWP9BRGY <span class="govuk-body-m"><a href="#">View entire claim</a></span>
+        {{ reference }} <span class="govuk-body-m"><a href="#">View entire claim</a></span>
     </h1>
   </div>
   <div class="govuk-grid-column-one-half">
@@ -14,7 +14,7 @@
         </dt>
 
         <dd class="govuk-summary-list__value">
-          1234567
+          {{ trn }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -23,7 +23,7 @@
         </dt>
 
         <dd class="govuk-summary-list__value">
-          Fred Smith
+          {{ name }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -32,7 +32,7 @@
         </dt>
 
         <dd class="govuk-summary-list__value">
-          01/01/1970
+          {{ dob }}
         </dd>
       </div>
     </dl>
@@ -63,7 +63,7 @@
         </dt>
 
         <dd class="govuk-summary-list__value">
-          foo@example.com
+          {{ email }}
         </dd>
       </div>
     </dl>
