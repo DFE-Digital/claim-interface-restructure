@@ -59,6 +59,17 @@
 {% set dob = "21/08/1979" %}
 {% set email = "freddysmith@gmail.com" %}{% include "includes/claim-header-block.html" %}
 
+<!--tekin sez
+
+Yeah, mentioning the policy sounds helpful for sure. Scenarios I’ve seen:
+two claims, one for each policy
+
+- Old claim was rejected, user claimed again with corrected details
+- A weird scenario where two different teachers claimed with the same TRN
+- That’s off the top of my head, I’m sure service operators will have seen more.
+
+-->
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -68,6 +79,7 @@
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header">This claim<br />ABN7HAAH</th>
                 <th scope="col" class="govuk-table__header">Matched claim<br/><a href="#">6Y9U2V9D</a></th>
                 <th scope="col" class="govuk-table__header"></th>
               </tr>
@@ -79,10 +91,16 @@
                   <td class="govuk-table__cell">
                     6728374
                   </td>
+                  <td class="govuk-table__cell">
+                    6728374
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">National Insurance Number
                   </th>
+                  <td class="govuk-table__cell">
+                    QQ123456C
+                  </td>
                   <td class="govuk-table__cell">
                     QQ123456C
                   </td>
@@ -93,11 +111,17 @@
                   <td class="govuk-table__cell">
                     Fred Smith
                   </td>
+                  <td class="govuk-table__cell">
+                    Fred Smith
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">
                     Policy
                   </th>
+                  <td class="govuk-table__cell">
+                    Claim a payment for teaching maths or physics
+                  </td>
                   <td class="govuk-table__cell">
                     Teachers: claim back your student loan repayments
                   </td>
@@ -105,6 +129,9 @@
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">
                   </th>
+                  <td class="govuk-table__cell">
+                    
+                  </td>
                   <td class="govuk-table__cell">
                     <a href="#">View full claim</a>
                   </td>
