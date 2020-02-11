@@ -20,7 +20,8 @@
         }
       },
       {
-        href: "/claim",
+        href: "/admin/claims/search",
+        text: "Search",
         attributes: {
           "data-tutorials": "Search"
         }
@@ -72,7 +73,7 @@
 	      </div>
 	</form>
 
-	<h2 class="govuk-heading-m">195 claims awaiting checking</h2>
+	<h2 class="govuk-heading-m">195 claims awaiting a decision</h2>
 
 	<a class="govuk-button" data-module="govuk-button" role="button" href="/admin/claims.csv">Download report request file</a>
 
@@ -83,11 +84,11 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Reference</th>
-            <th scope="col" class="govuk-table__header">Applicant Name</th>
-            <th scope="col" class="govuk-table__header">ID Verification</th>
+            <th scope="col" class="govuk-table__header">Full name</th>
+            <th scope="col" class="govuk-table__header">Identity</th>
             <th scope="col" class="govuk-table__header">Service</th>
-              <th scope="col" class="govuk-table__header">Check warning</th>
-            <th scope="col" class="govuk-table__header">Check deadline</th>
+              <th scope="col" class="govuk-table__header"><abbr title="Service Level Agreement (when we should make a decicion by)">SLA</abbr></th>
+            <th scope="col" class="govuk-table__header">Decision deadline</th>
             <th scope="col" class="govuk-table__header"></th>
           </tr>
         </thead>
@@ -95,200 +96,200 @@
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">YWP9BRGY</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-15 days</strong></td>
               <td class="govuk-table__cell">15 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">WXHERP56</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-15 days</strong></td>
               <td class="govuk-table__cell">15 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">KTCP1GIE</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-15 days</strong></td>
               <td class="govuk-table__cell">15 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">9XH7SYFN</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-15 days</strong></td>
               <td class="govuk-table__cell">15 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">2ZSQ2YUP</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-15 days</strong></td>
               <td class="govuk-table__cell">15 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">FHPJ2SJF</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-15 days</strong></td>
               <td class="govuk-table__cell">15 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">A51PMRAU</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-15 days</strong></td>
               <td class="govuk-table__cell">15 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">B1ZU39BE</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-15 days</strong></td>
               <td class="govuk-table__cell">15 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">DH1ITB6T</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">558G4G9B</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">MTWN9I95</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">3SY9BMUQ</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">7EX24ZCP</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">W4LUECK8</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">X4G5FNUG</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">U4LDTWEW</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">4BGPPN2H</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">8VBKNSGW</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">73QZ9ECT</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">7TNZWAVD</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">L2RSK4R3</th>
               <td class="govuk-table__cell">Fred Smith</td>
-              <td class="govuk-table__cell">GOV.UK Verify</td>
+              <td class="govuk-table__cell">Confirmation failed</td>
               <td class="govuk-table__cell">Student Loans</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag tag--alert">-14 days</strong></td>
               <td class="govuk-table__cell">16 January 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">T5NZEZTQ</th>
               <td class="govuk-table__cell">Mark David Goddard</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag tag--warning">Unverified</strong></td>
+              <td class="govuk-table__cell"><strong class="govuk-tag tag--warning">Unconfirmed</strong></td>
               <td class="govuk-table__cell">Maths and Physics</td>
                 <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell">16 April 2020</td>
-              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View claim</a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/claim">View tasks</a></td>
             </tr>
         </tbody>
       </table>

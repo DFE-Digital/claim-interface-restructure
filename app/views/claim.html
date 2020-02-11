@@ -13,9 +13,9 @@
     navigation: [
       {
         href: "/claims",
-        text: "Claims",
+        text: "View claims",
         attributes: {
-          "data-install": "Claims"
+          "data-install": "View claims"
         }
       },
       {
@@ -56,7 +56,7 @@
 {% set reference = "ABN7HA" %}
 {% set trn = "2783017" %}
 {% set name = "Fred Smith" %}
-{% set dob = "21/08/1979" %}
+{% set dob = "21 August 1979" %}
 {% set email = "freddysmith@gmail.com" %}
 {% include "includes/claim-header-block.html" %}
 
@@ -72,7 +72,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="claim/qualifications.html" aria-describedby="eligibility-completed">
-                  Check qualification eligibility
+                  Check qualification information
                 </a>
               </span>
               <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -87,15 +87,15 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="claim/employment.html" aria-describedby="company-information-completed">
-                  Check employment eligibility
+                  Check employment information
                 </a>
               </span>
               <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="claim/employment.html" aria-describedby="company-information-completed">
-                  Check student loan eligibility
+                <a href="claim/student-loan.html" aria-describedby="company-information-completed">
+                  Check student loan amount
                 </a>
               </span>
             </li>
@@ -103,21 +103,7 @@
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Current school and subject
-          </h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="claim/current-school-subject.html">
-                  Check current school and subject eligibility
-                </a>
-              </span>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4. </span> Claims with matching details
+            <span class="app-task-list__section-number">3. </span> Claims with matching details
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -131,13 +117,13 @@
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Identity verification
+            <span class="app-task-list__section-number">4. </span> Identity confirmation
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#">
-                  Confirm that the claimant has been identified
+                <a href="claim/identity-confirmation.html">
+                  Confirm the claimant made the claim
                 </a>
               </span>
             </li>
@@ -173,7 +159,7 @@
                 Please write a brief note explaining why this claim has been rejected or approved.
               </span>
               <textarea class="govuk-textarea" aria-describedby="notes-hint" rows="5" name="check[notes]" id="check_notes"></textarea>
-              <input type="submit" name="commit" value="Confirm decicion" class="govuk-button" data-disable-with="Confirm decicion">
+              <input type="submit" name="commit" value="Confirm decision" class="govuk-button" data-disable-with="Confirm decicion">
         </div>
       </form> 
 
