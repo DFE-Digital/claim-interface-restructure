@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Task list
+    Viewing claim ABN7HA for student loans
 {% endblock %}
 
 {% block header %}
@@ -13,9 +13,9 @@
     navigation: [
       {
         href: "/claims",
-        text: "Claims",
+        text: "View claims",
         attributes: {
-          "data-install": "Claims"
+          "data-install": "View claims"
         }
       },
       {
@@ -56,7 +56,7 @@
 {% set reference = "ABN7HA" %}
 {% set trn = "2783017" %}
 {% set name = "Fred Smith" %}
-{% set dob = "21/08/1979" %}
+{% set dob = "21 August 1979" %}
 {% set email = "freddysmith@gmail.com" %}
 {% include "includes/claim-header-block.html" %}
 
@@ -72,7 +72,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="claim/qualifications.html" aria-describedby="eligibility-completed">
-                  Check qualification eligibility
+                  Check qualification information
                 </a>
               </span>
               <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -87,22 +87,29 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="claim/employment.html" aria-describedby="company-information-completed">
-                  Check employment and student loan eligibility
+                  Check employment information
                 </a>
               </span>
               <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="claim/student-loan.html" aria-describedby="company-information-completed">
+                  Check student loan amount
+                </a>
+              </span>
             </li>
           </ul>
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Current school and subject
+            <span class="app-task-list__section-number">3. </span> Current school and subject 
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="claim/current-school-subject.html">
-                  Check current school and subject eligibility
+                <a href="claim/current-school-subject">
+                  Confirm response from school
                 </a>
               </span>
             </li>
@@ -124,51 +131,19 @@
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Identity verification
+            <span class="app-task-list__section-number">5. </span> Identity confirmation
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#">
-                  Confirm that the claimant has been identified
+                <a href="claim/identity-confirmation.html">
+                  Confirm the claimant made the claim
                 </a>
               </span>
             </li>
           </ul>
         </li>
       </ol>
-
-      <form class="new_check" id="claim_check_form" action="/admin/claims/b15b39f1-163b-41b6-b767-95144f961c25/checks" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
-                  <h2 class="govuk-fieldset__heading">
-                    Claim decision
-                  </h2>
-                </legend>
-
-
-                
-                <div class="govuk-radios govuk-radios--inline">
-                  <input type="hidden" name="check[result]" id="check_result">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" type="radio" value="approved" name="check[result]" id="check_result_approved">
-                    <label class="govuk-label govuk-radios__label" for="check_result_approved">Approve</label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" type="radio" value="rejected" name="check[result]" id="check_result_rejected">
-                    <label class="govuk-label govuk-radios__label" for="check_result_rejected">Reject</label>
-                  </div>
-                </div>
-              </fieldset>
-              <label class="govuk-label govuk-label--m" for="check_notes">Decision notes</label>
-              <span class="govuk-hint" id="notes-hint">
-                Please write a brief note explaining why this claim has been rejected or approved.
-              </span>
-              <textarea class="govuk-textarea" aria-describedby="notes-hint" rows="5" name="check[notes]" id="check_notes"></textarea>
-              <input type="submit" name="commit" value="Confirm decicion" class="govuk-button" data-disable-with="Confirm decicion">
-        </div>
-      </form> 
 
     </div>
   </div>
