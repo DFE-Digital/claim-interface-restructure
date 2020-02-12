@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Viewing matching details for claim ABN7HA for student loans
+  Viewing qualifications for claim ABN7HA for student loans
 {% endblock %}
 
 {% block header %}
@@ -62,28 +62,34 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <table id="claims-with-matches" class="govuk-table govuk-!-margin-bottom-9">
-            <caption class="govuk-table__caption govuk-heading-l">Claims with matching details</caption>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Claim</th>
-                <th scope="col" class="govuk-table__header">Matching details</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header"><a class="govuk-link" href="/admin/claims/eb063e7e-4902-4fc7-9691-a97f05888694">6Y9U2V9D</a>
-                  </th><td class="govuk-table__cell">
-                    <ul class="govuk-list">
-                      <li>Building society roll number</li>
-                      <li>National insurance number</li>
-                    </ul>
-                  </td>
-                </tr>
-            </tbody>
-          </table>
+        <h2 class="govuk-heading-l">
+          Qualifications
+        </h2>
+        <p class="govuk-body-l">Check the claimant's initial teacher training (ITT) qualification year and specialist subject matches the below information from their claim.</p>
 
-          <a href="../claim/identity-confirmation" class="govuk-button">Complete matching details check and continue</a>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Award year
+              </dt>
+
+              <dd class="govuk-summary-list__value">
+                In or after the academic year 2014 to 2015
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                <abbr title="Initial Teacher Training">ITT</abbr> subject
+              </dt>
+
+              <dd class="govuk-summary-list__value">
+                Maths
+              </dd>
+            </div>
+            
+        </dl>
+        <a href="./employment" class="govuk-button">Complete qualifications check and continue</a>
+      </div>
 
     </div>
   </div>

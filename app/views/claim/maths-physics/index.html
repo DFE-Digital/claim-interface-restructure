@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Viewing claim ABN7HA for student loans
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    serviceName: serviceName,
+    serviceUrl: "/",
+    navigation: [
+      {
+        href: "/claims",
+        text: "View claims",
+        attributes: {
+          "data-install": "View claims"
+        }
+      },
+      {
+        href: "/admin/claims/search",
+        text: "Search",
+        attributes: {
+          "data-tutorials": "Search"
+        }
+      },
+      {
+        href: "/admin/payroll_runs",
+        text: "Payroll",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/policy_configurations",
+        text: "Open/close a service",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/auth/sign-out",
+        text: "Sign out",
+        attributes: {
+          "data-about": "Sign out"
+        }
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% set service_name = "Claim a payment for teaching maths or physics" %}
+{% set reference = "AH6RHG1" %}
+{% set trn = "2718203" %}
+{% set name = "Leona Shepherd" %}
+{% set dob = "26/02/1985" %}
+{% set email = "leonasheps@hotmail.com" %}
+{% include "includes/claim-header-block.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Qualifications
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./maths-physics/qualifications.html" aria-describedby="eligibility-completed">
+                  Check qualification information
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Employment
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-completed">
+                  Check employment information
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Current school and subject 
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Confirm response from school
+                </a>
+              </span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Claims with matching details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Review matching details from other claims
+                </a>
+              </span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Identity confirmation
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Confirm the claimant made the claim
+                </a>
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+
+{% endblock %}
