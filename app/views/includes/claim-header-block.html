@@ -3,7 +3,7 @@
     <a class="govuk-back-link" href="/claims">Back</a>
     <span class="govuk-caption-xl">{{ service_name }}</span>
     <h1 class="govuk-heading-xl">
-        {{ reference }} <span class="govuk-body-m"><a href="/claim-full">View full claim</a></span>
+        {{ check_title }} <span class="govuk-body-m"><a href="/claim-full">View full claim</a></span>
     </h1>
   </div>
   <div class="govuk-grid-column-one-half">
@@ -45,16 +45,16 @@
         </dt>
 
         <dd class="govuk-summary-list__value">
-          15 February 2020 <strong class="govuk-tag tag--alert">15 days</strong>
+          <abbr title="Submitted 23 October 2019 3:21pm">15 February 2020</abbr> <strong class="govuk-tag tag--alert">15 days</strong>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Submitted
+          Reference
         </dt>
 
         <dd class="govuk-summary-list__value">
-          23 October 2019 3:21pm
+          {{ reference }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
