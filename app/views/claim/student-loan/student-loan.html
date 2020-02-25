@@ -64,8 +64,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    <p class="govuk-body-l">Check the claimant's student loan amount is within the set threshold and the plan type is correct.</p>
-
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
         <div class="govuk-summary-list__row">
@@ -92,11 +90,12 @@
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
-                  <h3 class="govuk-heading-m govuk-!-margin-0">
-                    Does the information match?
+                  <h3 class="govuk-heading-l govuk-!-margin-0">
+                    Does the information meet the criteria?
                   </h3>
                 </legend>
 
+                <p class="govuk-body-l">Check the claimant's student loan amount is within the set threshold and the plan type is correct.</p>
 
                 
                 <div class="govuk-radios">
@@ -108,13 +107,6 @@
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" type="radio" value="rejected" name="check[result]" id="check_result_rejected">
                     <label class="govuk-label govuk-radios__label" for="check_result_rejected">No</label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" type="radio" value="refer" name="check[result]" id="check_result_refer">
-                    <label class="govuk-label govuk-radios__label" for="check_result_refer">Refer to support</label>
-                    <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
-                      If the loan amount is outside the threshold of there is a suspected problem with the plan type.
-                    </span>
                   </div>
                 </div>
               </fieldset>

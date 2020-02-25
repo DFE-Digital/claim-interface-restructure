@@ -64,20 +64,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    <p class="govuk-body-l">On or after the check expires, confirm the claimant's school has not replied to our employment and subject check.</p>
-
     <form class="new_check" id="claim_check_form" action="./matching-details" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
-              <h3 class="govuk-heading-m govuk-!-margin-0">
-                Have they been bad?
+              <h3 class="govuk-heading-l govuk-!-margin-0">
+                Has we received a notification from the school of a problem?
               </h3>
             </legend>
 
+            <p class="govuk-body-l">On or after the check expires, confirm the claimant's school has not replied to our employment and subject check.</p>
 
             
-            <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios">
               <input type="hidden" name="check[result]" id="check_result">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" type="radio" value="approved" name="check[result]" id="check_result_approved">
@@ -87,13 +86,11 @@
                 <input class="govuk-radios__input" type="radio" value="rejected" name="check[result]" id="check_result_rejected">
                 <label class="govuk-label govuk-radios__label" for="check_result_rejected">No</label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" type="radio" value="rejected" name="check[result]" id="check_result_rejected">
-                <label class="govuk-label govuk-radios__label" for="check_result_rejected">Response still pending</label>
-              </div>
             </div>
           </fieldset>
-          <input type="submit" name="commit" value="Save and continue" class="govuk-button" data-disable-with="Save and continue">
+          <input type="submit" name="commit" value="Save and continue" class="govuk-button" data-disable-with="Save and continue"> 
+          &nbsp;
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Still awaiting response</button>
       </div>
     </form> 
 

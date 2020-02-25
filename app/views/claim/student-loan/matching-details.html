@@ -54,7 +54,7 @@
 
 {% set service_name = "Teachers: claim back your student loan repayments" %}
 {% set reference = "ABN7HA" %}
-{% set check_title = "Claims with matching details" %}
+{% set check_title = "Other claims with matching details" %}
 {% set trn = "2783017" %}
 {% set name = "Fred Smith" %}
 {% set dob = "21 August 1979" %}
@@ -89,11 +89,14 @@
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
-                  <h3 class="govuk-heading-m govuk-!-margin-0">
-                    Is everything ok?
+                  <h3 class="govuk-heading-l govuk-!-margin-0">
+                    Is there any reason to reject the claim?
                   </h3>
                 </legend>
-                
+
+                <p class="govuk-body-l">Check the information which matches with another claim to determine if there is a problem.</p>
+
+
                 <div class="govuk-radios govuk-radios--inline">
                   <input type="hidden" name="check[result]" id="check_result">
                   <div class="govuk-radios__item">
@@ -109,7 +112,6 @@
               <input type="submit" name="commit" value="Save and continue" class="govuk-button" data-disable-with="Save and continue">
           </div>
         </form> 
-
     </div>
   </div>
 
