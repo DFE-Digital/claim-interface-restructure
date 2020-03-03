@@ -53,6 +53,7 @@
 {% block content %}
 
 {% set service_name = "Teachers: claim back your student loan repayments" %}
+{% set check_title = "Identity confirmation" %}
 {% set reference = "ABN7HA" %}
 {% set trn = "2783017" %}
 {% set name = "Fred Smith" %}
@@ -62,11 +63,6 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-        <h2 class="govuk-heading-l">
-          Identity confirmation
-        </h2>
-        <p class="govuk-body-l">The claimant did not complete GOV.UK Verify. Refer to the <a class="govuk-link" href="https://docs.google.com/document/d/1wZh68_RV_FTJLxXIDPr3XFtJHW3vRgiXGaBDUo1Q1ZU">Confirming a claimant's identity playbook</a>.</p>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
@@ -92,14 +88,16 @@
        <form class="new_check" id="claim_check_form" action="./decision" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
-                  <h3 class="govuk-heading-m govuk-!-margin-0">
-                    Do they work at the school?
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-0">
+                  <h3 class="govuk-heading-l ">
+                    Did the claimant submit the claim?
                   </h3>
+
                 </legend>
 
+                <p class="govuk-body-l">The claimant did not complete GOV.UK Verify. Refer to the <a class="govuk-link" href="https://docs.google.com/document/d/1wZh68_RV_FTJLxXIDPr3XFtJHW3vRgiXGaBDUo1Q1ZU">Confirming a claimant's identity playbook</a>.</p>
 
-                
+
                 <div class="govuk-radios govuk-radios--inline">
                   <input type="hidden" name="check[result]" id="check_result">
                   <div class="govuk-radios__item">

@@ -54,6 +54,7 @@
 
 {% set service_name = "Teachers: claim back your student loan repayments" %}
 {% set reference = "ABN7HA" %}
+{% set check_title = "Claim decision" %}
 {% set trn = "2783017" %}
 {% set name = "Fred Smith" %}
 {% set dob = "21 August 1979" %}
@@ -66,13 +67,22 @@
       <form class="new_check" id="claim_check_form" action="/claims" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
-                  <h2 class="govuk-fieldset__heading">
-                    Claim decision
+
+                <div class="govuk-error-summary govuk-error-subtle" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                  <h2 class="govuk-error-summary__title" id="error-summary-title">
+                    Some checks have not yet been completed
                   </h2>
-                </legend>
-
-
+                  <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+                      <li>
+                        <a href="#passport-issued-error">Check qualification information</a>
+                      </li>
+                      <li>
+                        <a href="#postcode-error">Check employment information</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
                 
                 <div class="govuk-radios govuk-radios--inline">
                   <input type="hidden" name="check[result]" id="check_result">
