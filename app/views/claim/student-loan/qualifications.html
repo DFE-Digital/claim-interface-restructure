@@ -89,10 +89,32 @@
             </div>
             
         </dl>
-        <div class="govuk-inset-text">
-          <p><strong class="govuk-tag tag--alert">Passed</strong></p>
-          <p>This task was completed by Robbie Paul on 24 February 2020 10:28am</p>
-        </div>
+        <form class="new_check" id="claim_check_form" action="./employment" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+                  <h3 class="govuk-heading-m govuk-!-margin-0">
+                    Does the information match?
+                  </h3>
+                </legend>
+
+
+                
+                <div class="govuk-radios govuk-radios--inline">
+                  <input type="hidden" name="check[result]" id="check_result">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" type="radio" value="approved" name="check[result]" id="check_result_approved">
+                    <label class="govuk-label govuk-radios__label" for="check_result_approved">Yes</label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" type="radio" value="rejected" name="check[result]" id="check_result_rejected">
+                    <label class="govuk-label govuk-radios__label" for="check_result_rejected">No</label>
+                  </div>
+                </div>
+              </fieldset>
+              <input type="submit" name="commit" value="Save and continue" class="govuk-button" data-disable-with="Save and continue">
+          </div>
+        </form> 
       </div>
 
     </div>
