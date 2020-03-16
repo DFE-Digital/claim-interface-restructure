@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Viewing employment for claim ABN7HA for student loans
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    serviceName: serviceName,
+    serviceUrl: "/",
+    navigation: [
+      {
+        href: "/claims",
+        text: "View claims",
+        attributes: {
+          "data-install": "View claims"
+        }
+      },
+      {
+        href: "/admin/claims/search",
+        text: "Search",
+        attributes: {
+          "data-tutorials": "Search"
+        }
+      },
+      {
+        href: "/admin/payroll_runs",
+        text: "Payroll",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/policy_configurations",
+        text: "Open/close a service",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/auth/sign-out",
+        text: "Sign out",
+        attributes: {
+          "data-about": "Sign out"
+        }
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% set service_name = "Teachers: claim back your student loan repayments" %}
+{% set reference = "ABN7HA" %}
+{% set check_title = "Employment" %}
+{% set trn = "2783017" %}
+{% set name = "Fred Smith" %}
+{% set dob = "21 August 1979" %}
+{% set email = "freddysmith@gmail.com" %}
+{% include "includes/claim-header-block.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            6 April 2018 to 5 April 2019
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/106653">Penistone Grammar School</a> <span class="govuk-body-s">(370/4027)</span>
+          </dd>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current school
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/106653">Penistone Grammar School</a> <span class="govuk-body-s">(370/4027)</span>
+          </dd>
+        </div>
+    </dl>
+
+    <form class="new_check" id="claim_check_form" action="./student-loan" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+              <h3 class="govuk-heading-l govuk-!-margin-0">
+                Does the claimant’s previous and current schools match the above information from their claim?
+              </h3>
+            </legend>
+            
+            <div class="govuk-radios govuk-radios--inline">
+              <input type="hidden" name="check[result]" id="check_result">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" type="radio" value="approved" name="check[result]" id="check_result_approved">
+                <label class="govuk-label govuk-radios__label" for="check_result_approved">Yes</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" type="radio" value="rejected" name="check[result]" id="check_result_rejected">
+                <label class="govuk-label govuk-radios__label" for="check_result_rejected">No</label>
+              </div>
+            </div>
+          </fieldset>
+          <input type="submit" name="commit" value="Save and continue" class="govuk-button" data-disable-with="Save and continue">
+      </div>
+    </form> 
+
+    </div>
+  </div>
+
+{% endblock %}

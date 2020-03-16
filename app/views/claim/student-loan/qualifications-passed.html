@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Task list
+  Viewing qualifications for claim ABN7HA for student loans
 {% endblock %}
 
 {% block header %}
@@ -54,18 +54,15 @@
 
 {% set service_name = "Teachers: claim back your student loan repayments" %}
 {% set reference = "ABN7HA" %}
+{% set check_title = "Qualifications" %}
 {% set trn = "2783017" %}
 {% set name = "Fred Smith" %}
-{% set dob = "21/08/1979" %}
-{% set email = "freddysmith@gmail.com" %}{% include "includes/claim-header-block.html" %}
+{% set dob = "21 August 1979" %}
+{% set email = "freddysmith@gmail.com" %}
+{% include "includes/claim-header-block.html" %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-        <h2 class="govuk-heading-l">
-          Qualifications
-        </h2>
-        <p class="govuk-body-l">Check the claimant qualified in an eligible academic year.</p>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
@@ -79,7 +76,7 @@
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Subjects
+                Subjects taught
               </dt>
 
               <dd class="govuk-summary-list__value">
@@ -88,7 +85,12 @@
             </div>
             
         </dl>
-        <a href="./employment" class="govuk-button">Complete qualifications check</a>
+        
+        <div class="govuk-inset-text">
+            <p><strong class="govuk-tag tag--alert">Passed</strong></p>
+            <p>This task was completed by Robbie Paul on 24 February 2020 at 10:32am</p>
+        </div>
+
       </div>
 
     </div>
