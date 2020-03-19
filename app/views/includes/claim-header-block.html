@@ -68,4 +68,34 @@
       </div>
     </dl>
   </div>
+  <div class="govuk-grid-column-full  govuk-!-margin-bottom-4">
+    <dl class="govuk-summary-list ">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            <label for="supportTicket">
+              Support ticket
+            </label>
+        </dt>
+
+        <dd class="govuk-summary-list__value">
+            <input class="govuk-input" id="supportTicket" name="supportTicket" type="text" value="{{ supportTicket }}">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <label for="supportNotes">
+            Support notes
+          </label>
+        </dt>
+
+        <dd class="govuk-summary-list__value">
+            <textarea class="govuk-textarea" id="supportNotes-detail" name="supportNotes" rows="3" aria-describedby="supportNotes">{{ supportNotes }}</textarea>
+        </dd>
+      </div>
+    </dl>
+    {{ govukButton({
+  text: "Save support information",
+  classes: "govuk-button--secondary"
+}) }}
+  </div>
 </div>
