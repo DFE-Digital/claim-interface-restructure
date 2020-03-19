@@ -86,7 +86,21 @@
         </div>
     </dl>
 
-    <form class="new_check" id="claim_check_form" action="./current-school-subject" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
+    {% if data['student-loan-task-zendesk-url'] %}
+      <div class="flash-card govuk-!-margin-bottom-9">
+        <header>
+          <h3 class="govuk-heading-m">This claim has a support ticket assigned</h3>
+        </header>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <p>This claim has a support ticket assigned to it for the student loan. Check it's current state before completing this task.</p>
+            <p><a href="{{ data['student-loan-task-zendesk-url']}}">View the support ticket</a></p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <form class="new_check" id="claim_check_form" action="/claim/student-loan/student-loan" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
@@ -94,17 +108,42 @@
                     Does the claimant’s student loan amount and plan type match the information we hold about their loan?
                   </h3>
                 </legend>
-
                 
-                <div class="govuk-radios govuk-radios--inline">
-                  <input type="hidden" name="check[result]" id="check_result">
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" type="radio" value="approved" name="check[result]" id="check_result_approved">
-                    <label class="govuk-label govuk-radios__label" for="check_result_approved">Yes</label>
+                    <input class="govuk-radios__input" id="how-contacted-conditional" name="student-loan-task" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="yes">
+                      Yes
+                    </label>
                   </div>
+
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" type="radio" value="rejected" name="check[result]" id="check_result_rejected">
-                    <label class="govuk-label govuk-radios__label" for="check_result_rejected">No</label>
+                    <input class="govuk-radios__input" id="how-contacted-conditional" name="student-loan-task" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="yes">
+                      No
+                    </label>
+                  </div>
+                  <div class="govuk-radios__divider">or</div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="student-loan-task" type="radio" value="student-loan-task-raise-ticket" data-aria-controls="conditional-how-contacted-conditional-2">
+                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                      Start a support ticket
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="contact-by-phone">
+                        Link to support ticket
+                      </label>
+                      <span id="account-number-hint" class="govuk-hint">
+                        You can <a href="https://additional-teaching-payment.zendesk.com/agent/tickets/new/1" target="_blank">raise a support ticket</a> (opens in a new window) if this question requires further evidence. Copy the URL of that page and paste it here once the ticket has been 'submitted as new'.
+                      </span>
+                      <input class="govuk-input govuk-input--width-20" id="contact-by-phone" name="student-loan-task-zendesk-url" type="url" placeholder="https://" value="{{ data['student-loan-task-zendesk-url']}}">
+                    </div>
+
+                  </div>
+
                   </div>
                 </div>
               </fieldset>
