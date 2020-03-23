@@ -86,7 +86,25 @@
         </div>
     </dl>
 
+<<<<<<< HEAD
     <form class="new_check" id="claim_check_form" action="./current-school-subject" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
+=======
+    {% if data['student-loan-task-zendesk-url'] %}
+      <div class="flash-card govuk-!-margin-bottom-9">
+        <header>
+          <h3 class="govuk-heading-m">This claim has a support ticket assigned</h3>
+        </header>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <p>This claim has a support ticket assigned to it for the student loan. Check it's current state before completing this task.</p>
+            <p><a href="{{ data['student-loan-task-zendesk-url']}}">View the support ticket</a></p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <form class="new_check" id="claim_check_form" action="/claim/student-loan/current-school-subject" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
+>>>>>>> 8107d658... Student loan flow with zendesk ticket links
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
