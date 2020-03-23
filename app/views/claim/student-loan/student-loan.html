@@ -59,6 +59,9 @@
 {% set name = "Fred Smith" %}
 {% set dob = "21 August 1979" %}
 {% set email = "freddysmith@gmail.com" %}
+{% set decisionNotes = "The name submitted is different from that stored on HL, contacted
+    claimant and it was because they have recently changed their name.
+    Spoke to KB and agreed to approve" %}
 {% include "includes/claim-header-block.html" %}
 
   <div class="govuk-grid-row">
@@ -95,7 +98,7 @@
                   </h3>
                 </legend>
 
-                
+
                 <div class="govuk-radios govuk-radios--inline">
                   <input type="hidden" name="check[result]" id="check_result">
                   <div class="govuk-radios__item">
@@ -110,7 +113,7 @@
               </fieldset>
               <input type="submit" name="commit" value="Save and continue" class="govuk-button" data-disable-with="Save and continue">
           </div>
-        </form> 
+        </form>
 
     </div>
   </div>

@@ -1,3 +1,6 @@
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <a class="govuk-back-link" href="/claim/student-loan">Back</a>
@@ -69,3 +72,58 @@
     </dl>
   </div>
 </div>
+
+
+<div class="govuk-grid-row">
+  {{ govukAccordion({
+    id: "accordion-default",
+    items: [
+      {
+        heading: {
+          text: "Decision notes"
+        },
+        content: {
+          html: "<textarea class='govuk-textarea' id='supportNotes-detail' name='supportNotes' rows='3' aria-describedby='supportNotes'>The name submitted is different from that stored on HL, contacted claimant and it was because they have recently changed their name.
+
+Spoke to KB and agreed to approve</textarea>"
+        }
+      },
+      {
+        heading: {
+          text: "Support information"
+        },
+        content: {
+          html: "<dl class='govuk-summary-list '>
+                  <div class='govuk-summary-list__row'>
+                    <dt class='govuk-summary-list__key'>
+                        <label for='supportTicket'>
+                          Support ticket
+                        </label>
+                    </dt>
+                    <dd class='govuk-summary-list__value'>
+                        <input class='govuk-input' id='supportTicket' name='supportTicket' type='text' value='SOMTHING'>
+                    </dd>
+                  </div>
+                  <div class='govuk-summary-list__row'>
+                    <dt class='govuk-summary-list__key'>
+                      <label for='supportNotes'>
+                        Support notes
+                      </label>
+                    </dt>
+
+                    <dd class='govuk-summary-list__value'>
+                        <textarea class='govuk-textarea' id='supportNotes-detail' name='supportNotes' rows='3' aria-describedby='supportNotes'>The name submitted is different from that stored on HL, contacted claimant and it was because they have recently changed their name.
+
+Spoke to KB and agreed to approve</textarea>
+                    </dd>
+                  </div>
+                </dl>
+               BUTTON
+          "
+        }
+      }
+    ]
+  }) }}
+</div>
+
+
