@@ -65,6 +65,21 @@
 {% set check_title = name + " // " + reference %}
 {% set dob = "21 August 1979" %}
 {% set email = "freddysmith@gmail.com" %}
+{% set claimNotes = "Spoke with claimant on 13/01, started working in the school sept 18
+
+Salary between sept 18 and Apr 19 - £XX, XXX. He can't remember how he calculated repayments but thinks he probably added together payslips
+
+{SO NAME} - HL data only available from July/18, May need another Loan to high call to find out if remaining FY18/19 income (April18-June/18) is teaching
+
+related or not (i.e supply teacher)
+
+3 March 2020 - loan too high email sent, reply due 10 March
+
+4 March - reply received with repayments totalling £331. Have asked claimant to confirm his claim amount. Awaiting reply.
+
+6 March - reply received from claimant confirming £331 is correct amount. Claimant will need to re-apply.
+
+10 March  agreed that a developer could ammend the claim. Ammended and approved. KB" %}
 {% include "includes/claim-header-block.html" %}
 
   <div class="govuk-grid-row">
@@ -205,24 +220,21 @@
 
 {% set claimNotesHtml %}
 <div class="govuk-grid-row">
- <div class="govuk-grid-column-one-half">
+ <div class="govuk-grid-column-two-thirds">
       <h2 class="app-task-list__section">
         Support Ticket
       </h2>
-      {{ govukInput({
-        id: "supportTicket",
-        name: "supportTicket"
-      }) }}
+
+      <input class="govuk-input" id="ticketURL" name="ticketURL" type="text" value="{{ data["ticketURL"] }}">
 
       <h2 class="app-task-list__section">
         Claim Notes
       </h2>
-
-      {{ govukTextarea({
-        name: "claimNotes",
-        id: "claimNotes",
-        rows: 12
-      }) }}
+      <span class="govuk-hint">
+        Enter a breif decsription of the problem/steps take to resolve the problem
+        in the format Initals - Date - Message
+      </span>
+      <textarea class="govuk-textarea" id="claimNotes" name="claimNotes" rows="12" >{{ claimNotes }}</textarea>
 
       {{ govukButton({
         text: "Save Support Information",

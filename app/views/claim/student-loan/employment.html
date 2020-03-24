@@ -59,6 +59,22 @@
 {% set name = "Fred Smith" %}
 {% set dob = "21 August 1979" %}
 {% set email = "freddysmith@gmail.com" %}
+{% set claimNotes = "Spoke with claimant on 13/01, started working in the school sept 18
+
+Salary between sept 18 and Apr 19 - £XX, XXX. He can't remember how he calculated repayments but thinks he probably added together payslips
+
+{SO NAME} - HL data only available from July/18, May need another Loan to high call to find out if remaining FY18/19 income (April18-June/18) is teaching
+
+related or not (i.e supply teacher)
+
+3 March 2020 - loan too high email sent, reply due 10 March
+
+4 March - reply received with repayments totalling £331. Have asked claimant to confirm his claim amount. Awaiting reply.
+
+6 March - reply received from claimant confirming £331 is correct amount. Claimant will need to re-apply.
+
+10 March  agreed that a developer could ammend the claim. Ammended and approved. KB" %}
+
 {% include "includes/claim-header-block.html" %}
 
   <div class="govuk-grid-row">
@@ -85,8 +101,13 @@
           </dd>
         </div>
     </dl>
+    </div>
+  </div>
 
-    <form class="new_check" id="claim_check_form" action="./student-loan" accept-charset="UTF-8" method="post">
+{% set checksHtml %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form class="new_check" id="claim_check_form" action="student-loan" accept-charset="UTF-8" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
@@ -94,7 +115,7 @@
                 Does the claimant’s previous and current schools match the above information from their claim?
               </h3>
             </legend>
-            
+
             <div class="govuk-radios govuk-radios--inline">
               <input type="hidden" name="check[result]" id="check_result">
               <div class="govuk-radios__item">
@@ -109,9 +130,69 @@
           </fieldset>
           <input type="submit" name="commit" value="Save and continue" class="govuk-button" data-disable-with="Save and continue">
       </div>
-    </form> 
-
+    </form>
     </div>
+  </div>
+{% endset -%}
+
+{% set claimNotesHtml %}
+<div class="govuk-grid-row">
+ <div class="govuk-grid-column-two-thirds">
+      <h2 class="app-task-list__section">
+        Support Ticket
+      </h2>
+
+      <input class="govuk-input" id="ticketURL" name="ticketURL" type="text" value="{{ data["ticketURL"] }}">
+
+      <h2 class="app-task-list__section">
+        Claim Notes
+      </h2>
+      <span class="govuk-hint">
+        Enter a breif decsription of the problem/steps take to resolve the problem
+        in the format Initals - Date - Message
+      </span>
+      <textarea class="govuk-textarea" id="claimNotes" name="claimNotes" rows="12" >{{ claimNotes }}</textarea>
+
+      {{ govukButton({
+        text: "Save Support Information",
+        classes: "govuk-button--secondary"
+      }) }}
+    </div>
+  </div>
+{% endset -%}
+
+{% set pastWeekHtml %}
+<h2 class="govuk-heading-l">CLAIM TIMELINE</h2>
+TIMELINE GOES HERE
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Checks",
+      id: "checks",
+      panel: {
+        html: checksHtml
+      }
+    },
+    {
+      label: "Notes",
+      id: "notes",
+      panel: {
+        html: claimNotesHtml
+      }
+    },
+    {
+      label: "Claim History",
+      id: "claimHistory",
+      panel: {
+        html: pastWeekHtml
+      }
+    }
+  ]
+}) }}
+
+
   </div>
 
 {% endblock %}
