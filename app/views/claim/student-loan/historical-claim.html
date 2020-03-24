@@ -59,12 +59,13 @@
 {% block content %}
 
 {% set service_name = "Student Loans (2019/2020)" %}
-{% set reference = "ABN7HA" %}
+{% set reference = "ABN7HA " %}
 {% set trn = "2783017" %}
-{% set name = "Fred Smith" %}
-{% set check_title = reference %}
-{% set dob = "21 August 1979" %}
+{% set check_title = reference + " - Approved" %}
 {% set email = "freddysmith@gmail.com" %}
+{% set payrollStatus = "Awaiting payroll" %}
+{% set claimAmount = "468" %}
+{% set claimSubmitted = "3 Janurary 2020" %}
 {% set ticketURL = "https://additional-teaching-payment.zendesk.com/agent/tickets/1234" %}
 {% set claimNotes = "Spoke with claimant on 13/01, started working in the school sept 18
 
@@ -81,7 +82,7 @@ related or not (i.e supply teacher)
 6 March - reply received from claimant confirming £331 is correct amount. Claimant will need to re-apply.
 
 10 March  agreed that a developer could ammend the claim. Ammended and approved. KB" %}
-{% include "includes/claim-header-block.html" %}
+{% include "includes/historical-claim-header-block.html" %}
 
 <div class="govuk-grid-row">
 
