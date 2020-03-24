@@ -77,36 +77,31 @@ related or not (i.e supply teacher)
 
 {% include "includes/claim-header-block.html" %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            6 April 2018 to 5 April 2019
-          </dt>
-
-          <dd class="govuk-summary-list__value">
-            <a class="govuk-link" href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/106653">Penistone Grammar School</a> <span class="govuk-body-s">(370/4027)</span>
-          </dd>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Current school
-          </dt>
-
-          <dd class="govuk-summary-list__value">
-            <a class="govuk-link" href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/106653">Penistone Grammar School</a> <span class="govuk-body-s">(370/4027)</span>
-          </dd>
-        </div>
-    </dl>
-    </div>
-  </div>
 
 {% set checksHtml %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              6 April 2018 to 5 April 2019
+            </dt>
+
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/106653">Penistone Grammar School</a> <span class="govuk-body-s">(370/4027)</span>
+            </dd>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Current school
+            </dt>
+
+            <dd class="govuk-summary-list__value">
+              <a class="govuk-link" href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/106653">Penistone Grammar School</a> <span class="govuk-body-s">(370/4027)</span>
+            </dd>
+          </div>
+      </dl>
       <form class="new_check" id="claim_check_form" action="student-loan" accept-charset="UTF-8" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
@@ -192,7 +187,6 @@ TIMELINE GOES HERE
   ]
 }) }}
 
-
-  </div>
+</div>
 
 {% endblock %}
