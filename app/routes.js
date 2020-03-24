@@ -3,6 +3,14 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
+router.get("/claim/student-loan/employment", function(req, res) {
+  res.render("claim/student-loan/employment");
+});
+
+router.post("/claim/student-loan/employment", function(req, res) {
+    res.redirect("/claim/student-loan/student-loan");
+});
+
 router.get("/claim/student-loan/student-loan", function(req, res) {
   res.render("claim/student-loan/student-loan");
   req.session.data["loanAmount"] = "";

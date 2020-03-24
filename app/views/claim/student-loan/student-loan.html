@@ -85,20 +85,6 @@ related or not (i.e supply teacher)
 
 {% set checksHtml %}
 
- {% if data['student-loan-task-zendesk-url'] %}
-      <div class="flash-card govuk-!-margin-bottom-9">
-        <header>
-          <h3 class="govuk-heading-m">This claim has a support ticket assigned</h3>
-        </header>
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-            <p>This claim has a support ticket assigned to it for the student loan. Check it's current state before completing this task.</p>
-            <p><a href="{{ data['student-loan-task-zendesk-url']}}">View the support ticket</a></p>
-          </div>
-        </div>
-      </div>
-{% endif %}
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -123,6 +109,21 @@ related or not (i.e supply teacher)
           </dd>
         </div>
     </dl>
+
+
+ {% if data['ticketURL'] %}
+      <div class="flash-card govuk-!-margin-bottom-9">
+        <header>
+          <h3 class="govuk-heading-m">This claim has a support ticket assigned</h3>
+        </header>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <p>This claim has a support ticket assigned to it for the student loan. Check it's current state before completing this task.</p>
+            <p><a href="{{ data['student-loan-task-zendesk-url']}}">View the support ticket</a></p>
+          </div>
+        </div>
+      </div>
+{% endif %}
 
 
     <form class="new_check" id="claim_check_form" action="/claim/student-loan/student-loan" accept-charset="UTF-8" method="post">
@@ -187,7 +188,7 @@ related or not (i.e supply teacher)
       <h2 class="app-task-list__section">
         Support Ticket
       </h2>
-      <input class="govuk-input" id="ticketURL" name="ticketURL" type="text" value="{{ ticketURL }}">
+      <a href="{{ data["ticketURL"] }}" class="govuk-link">{{ ticketURL}}</a>
 
       <h2 class="app-task-list__section">
         Claim Notes
