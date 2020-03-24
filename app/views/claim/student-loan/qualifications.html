@@ -156,9 +156,38 @@ related or not (i.e supply teacher)
   </div>
 {% endset -%}
 
-{% set pastWeekHtml %}
-<h2 class="govuk-heading-l">CLAIM TIMELINE</h2>
-TIMELINE GOES HERE
+{% set claimAmendmentsHtml %}
+<div class="govuk-grid-row">
+ <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Claim Amendments</h2>
+    <div class="hmcts-timeline">
+        <div class="hmcts-timeline__item">
+          <section>
+              <h3 class="hmcts-timeline__title">Student loan repayment plan</h3>
+                <p class="hmcts-timeline__by">changed from Plan 2 to Plan 1</p>
+              <br>
+
+              <h3 class="hmcts-timeline__title">Change notes</h3>
+              <p class="hmcts-timeline__by">Changing plan type to show the time line</p>
+          </section>
+
+          <p class="hmcts-timeline__description"> by Rich Cooley on 24 March 2020 11:47am</p>
+        </div>
+        <div class="hmcts-timeline__item">
+          <section>
+              <h3 class="hmcts-timeline__title">Student loan repayment plan</h3>
+                <p class="hmcts-timeline__by">changed from not applicable to Plan 2</p>
+              <br>
+
+              <h3 class="hmcts-timeline__title">Change notes</h3>
+              <p class="hmcts-timeline__by">Got it from TPS</p>
+          </section>
+
+          <p class="hmcts-timeline__description"> by Tekin Suleyman on 11 March 2020 1:05pm</p>
+        </div>
+    </div>
+  </div>
+</div>
 {% endset -%}
 
 {{ govukTabs({
@@ -178,10 +207,10 @@ TIMELINE GOES HERE
       }
     },
     {
-      label: "Claim History",
-      id: "claimHistory",
+      label: "Claim Amendments",
+      id: "claimAmendments",
       panel: {
-        html: pastWeekHtml
+        html: claimAmendmentsHtml
       }
     }
   ]

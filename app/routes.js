@@ -5,6 +5,7 @@ const router = express.Router()
 
 router.get("/claim/student-loan/student-loan", function(req, res) {
   res.render("claim/student-loan/student-loan");
+  req.session.data["loanAmount"] = "";
 });
 
 router.post("/claim/student-loan/student-loan", function(req, res) {
