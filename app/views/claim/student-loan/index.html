@@ -1,3 +1,9 @@
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -62,8 +68,11 @@
 {% include "includes/claim-header-block.html" %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
 
+
+{% set checksHtml %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
@@ -72,7 +81,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="./student-loan/qualifications.html" aria-describedby="eligibility-completed">
+                <a href="qualifications.html" aria-describedby="eligibility-completed">
                   Check qualification information
                 </a>
               </span>
@@ -87,7 +96,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="./student-loan/employment.html" aria-describedby="company-information-completed">
+                <a href="employment.html" aria-describedby="company-information-completed">
                   Check employment information
                 </a>
               </span>
@@ -102,10 +111,13 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="./student-loan/student-loan.html" aria-describedby="company-information-completed">
+                <a href="student-loan.html" aria-describedby="company-information-completed">
                   Check student loan amount
                 </a>
               </span>
+              {% if data['student-loan-task-zendesk-url'] %}
+              <strong class="govuk-tag app-task-list__task-completed govuk-tag--inactive" id="company-information-completed ">Support</strong>
+              {% endif %}
             </li>
           </ul>
         </li>
@@ -116,7 +128,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="./student-loan/current-school-subject">
+                <a href="current-school-subject">
                   Confirm response from school
                 </a>
               </span>
@@ -131,7 +143,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="./student-loan/matching-details.html">
+                <a href="matching-details.html">
                   Review matching details from other claims
                 </a>
               </span>
@@ -146,7 +158,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="./student-loan/identity-confirmation.html">
+                <a href="identity-confirmation.html">
                   Confirm the claimant made the claim
                 </a>
               </span>
@@ -156,12 +168,27 @@
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">7. </span> Decision
+            <span class="app-task-list__section-number">7. </span> Gender
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="./student-loan/decision.html">
+                <a href="gender.html">
+                  Add the claimants gender
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__task-completed govuk-tag--inactive" id="company-information-completed">Incomplete</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">8. </span> Decision
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="decision.html">
                   Approve or reject this claim
                 </a>
               </span>
@@ -172,6 +199,71 @@
       </ol>
 
     </div>
+
+  </div>
+{% endset -%}
+
+{% set claimNotesHtml %}
+<div class="govuk-grid-row">
+ <div class="govuk-grid-column-one-half">
+      <h2 class="app-task-list__section">
+        Support Ticket
+      </h2>
+      {{ govukInput({
+        id: "supportTicket",
+        name: "supportTicket"
+      }) }}
+
+      <h2 class="app-task-list__section">
+        Claim Notes
+      </h2>
+
+      {{ govukTextarea({
+        name: "claimNotes",
+        id: "claimNotes",
+        rows: 12
+      }) }}
+
+      {{ govukButton({
+        text: "Save Support Information",
+        classes: "govuk-button--secondary"
+      }) }}
+    </div>
+  </div>
+{% endset -%}
+
+{% set pastWeekHtml %}
+<h2 class="govuk-heading-l">CLAIM TIMELINE</h2>
+TIMELINE GOES HERE
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Checks",
+      id: "checks",
+      panel: {
+        html: checksHtml
+      }
+    },
+    {
+      label: "Notes",
+      id: "notes",
+      panel: {
+        html: claimNotesHtml
+      }
+    },
+    {
+      label: "Claim History",
+      id: "claimHistory",
+      panel: {
+        html: pastWeekHtml
+      }
+    }
+  ]
+}) }}
+
+
   </div>
 
 {% endblock %}

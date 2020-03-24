@@ -1,3 +1,8 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -61,7 +66,26 @@
 {% set email = "freddysmith@gmail.com" %}
 {% include "includes/claim-header-block.html" %}
 
-  <div class="govuk-grid-row">
+
+
+
+{% set checksHtml %}
+
+ {% if data['student-loan-task-zendesk-url'] %}
+      <div class="flash-card govuk-!-margin-bottom-9">
+        <header>
+          <h3 class="govuk-heading-m">This claim has a support ticket assigned</h3>
+        </header>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <p>This claim has a support ticket assigned to it for the student loan. Check it's current state before completing this task.</p>
+            <p><a href="{{ data['student-loan-task-zendesk-url']}}">View the support ticket</a></p>
+          </div>
+        </div>
+      </div>
+{% endif %}
+
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -86,25 +110,8 @@
         </div>
     </dl>
 
-<<<<<<< HEAD
-    <form class="new_check" id="claim_check_form" action="./current-school-subject" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
-=======
-    {% if data['student-loan-task-zendesk-url'] %}
-      <div class="flash-card govuk-!-margin-bottom-9">
-        <header>
-          <h3 class="govuk-heading-m">This claim has a support ticket assigned</h3>
-        </header>
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-            <p>This claim has a support ticket assigned to it for the student loan. Check it's current state before completing this task.</p>
-            <p><a href="{{ data['student-loan-task-zendesk-url']}}">View the support ticket</a></p>
-          </div>
-        </div>
-      </div>
-    {% endif %}
 
-    <form class="new_check" id="claim_check_form" action="/claim/student-loan/current-school-subject" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
->>>>>>> 8107d658... Student loan flow with zendesk ticket links
+    <form class="new_check" id="claim_check_form" action="/claim/student-loan/student-loan" accept-charset="UTF-8" method="post">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
@@ -113,24 +120,120 @@
                   </h3>
                 </legend>
 
-                
-                <div class="govuk-radios govuk-radios--inline">
-                  <input type="hidden" name="check[result]" id="check_result">
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" type="radio" value="approved" name="check[result]" id="check_result_approved">
-                    <label class="govuk-label govuk-radios__label" for="check_result_approved">Yes</label>
+                    <input class="govuk-radios__input" id="loanAmount1" name="loanAmount" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="loanAmount1">
+                      Yes
+                    </label>
                   </div>
+
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" type="radio" value="rejected" name="check[result]" id="check_result_rejected">
-                    <label class="govuk-label govuk-radios__label" for="check_result_rejected">No</label>
+                    <input class="govuk-radios__input" id="loanAmount2" name="loanAmount" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="loanAmount2">
+                      No
+                    </label>
+                  </div>
+                  <div class="govuk-radios__divider">or</div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="loanAmount3" name="loanAmount" type="radio" value="text" data-aria-controls="conditional-loanAmount3">
+                    <label class="govuk-label govuk-radios__label" for="loanAmount3">
+                      Start support process
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-loanAmount3">
+                    <div class="govuk-form-group">
+                    <label class="govuk-label" for="ticketURL">
+                        Link to support ticket
+                      </label>
+                      <span class="govuk-hint">
+                        If you need further evidence to answer this question you
+                        can <a href="https://additional-teaching-payment.zendesk.com/agent/tickets/new/1" target="_blank">
+                        raise a support ticket <span class="govuk-visually-hidden">opens in a new window,</span></a>.
+                        <br><br>Then paste the URL of the ticket in the text box below.
+                      </span>
+                      <input class="govuk-input" id="ticketURL" name="ticketURL" type="url" placeholder="https://" value="{{ data['student-loan-task-zendesk-url']}}">
+                    </div>
+
                   </div>
                 </div>
-              </fieldset>
-              <input type="submit" name="commit" value="Save and continue" class="govuk-button" data-disable-with="Save and continue">
-          </div>
-        </form> 
+              </div>
+            </fieldset>
+            <input type="submit" name="commit" value="Save and continue" class="govuk-button" data-disable-with="Save and continue">
+        </div>
+      </form>
+  </div>
+</div>
+{% endset -%}
 
+{% set claimNotesHtml %}
+<div class="govuk-grid-row">
+ <div class="govuk-grid-column-one-half">
+      <h2 class="app-task-list__section">
+        Support Ticket
+      </h2>
+      <span class="govuk-hint">
+        Enter the URL of the ticket from the support ticket service
+      </span>
+      {{ govukInput({
+        id: "supportTicket",
+        name: "supportTicket"
+      }) }}
+
+      <h2 class="app-task-list__section">
+        Claim Notes
+      </h2>
+      <span class="govuk-hint">
+        Enter a breif decsription of the problem/steps take to resolve the problem
+        in the format Initals - Date - Message
+      </span>
+      {{ govukTextarea({
+        name: "claimNotes",
+        id: "claimNotes",
+        rows: 12
+      }) }}
+
+      {{ govukButton({
+        text: "Save Support Information",
+        classes: "govuk-button--secondary"
+      }) }}
     </div>
+  </div>
+{% endset -%}
+
+{% set pastWeekHtml %}
+<h2 class="govuk-heading-l">CLAIM TIMELINE</h2>
+TIMELINE GOES HERE
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Checks",
+      id: "checks",
+      panel: {
+        html: checksHtml
+      }
+    },
+    {
+      label: "Notes",
+      id: "notes",
+      panel: {
+        html: claimNotesHtml
+      }
+    },
+    {
+      label: "Claim History",
+      id: "claimHistory",
+      panel: {
+        html: pastWeekHtml
+      }
+    }
+  ]
+}) }}
+
+
   </div>
 
 {% endblock %}
