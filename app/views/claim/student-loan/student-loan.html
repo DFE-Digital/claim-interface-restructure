@@ -167,7 +167,7 @@ related or not (i.e supply teacher)
                         raise a support ticket <span class="govuk-visually-hidden">opens in a new window,</span></a>.
                         <br><br>Then paste the URL of the ticket in the text box below.
                       </span>
-                      <input class="govuk-input" id="ticketURL" name="ticketURL" type="url" placeholder="https://" value="{{ data['student-loan-task-zendesk-url']}}">
+                      <input class="govuk-input" id="ticketURL" name="ticketURL" type="url" placeholder="https://" value="{{ data['ticketURL']}}">
                     </div>
 
                   </div>
@@ -187,8 +187,7 @@ related or not (i.e supply teacher)
       <h2 class="app-task-list__section">
         Support Ticket
       </h2>
-
-      <input class="govuk-input" id="ticketURL" name="ticketURL" type="text" value="{{ data["ticketURL"] }}">
+      <input class="govuk-input" id="ticketURL" name="ticketURL" type="text" value="{{ ticketURL }}">
 
       <h2 class="app-task-list__section">
         Claim Notes
