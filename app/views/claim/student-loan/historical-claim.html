@@ -86,7 +86,7 @@ related or not (i.e supply teacher)
 
 <div class="govuk-grid-row">
 
-{% set checksHtml %}
+{% set tasksHtml %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
       <ol class="app-task-list">
@@ -281,21 +281,21 @@ related or not (i.e supply teacher)
 {{ govukTabs({
   items: [
     {
-      label: "Checks",
-      id: "checks",
+      label: "Tasks",
+      id: "tasks",
       panel: {
-        html: checksHtml
+        html: tasksHtml
       }
     },
     {
-      label: "Notes",
-      id: "notes",
+      label: "Notes and support",
+      id: "notesAndStupport",
       panel: {
         html: claimNotesHtml
       }
     },
     {
-      label: "Claim Amendments",
+      label: "Claim amendments",
       id: "claimAmendments",
       panel: {
         html: claimAmendmentsHtml

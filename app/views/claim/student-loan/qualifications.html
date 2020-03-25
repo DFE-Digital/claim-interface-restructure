@@ -78,7 +78,7 @@ related or not (i.e supply teacher)
 
 {% include "includes/claim-header-block.html" %}
 
-{% set checksHtml %}
+{% set tasksHtml %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -192,21 +192,21 @@ related or not (i.e supply teacher)
 {{ govukTabs({
   items: [
     {
-      label: "Checks",
-      id: "checks",
+      label: "Tasks",
+      id: "tasks",
       panel: {
-        html: checksHtml
+        html: tasksHtml
       }
     },
     {
-      label: "Notes",
-      id: "notes",
+      label: "Notes and support",
+      id: "notesAndStupport",
       panel: {
         html: claimNotesHtml
       }
     },
     {
-      label: "Claim Amendments",
+      label: "Claim amendments",
       id: "claimAmendments",
       panel: {
         html: claimAmendmentsHtml

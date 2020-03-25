@@ -86,13 +86,13 @@ related or not (i.e supply teacher)
     </div>
   </div>
 
-{% set checksHtml %}
+{% set tasksHtml %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
   <div class="flash-card govuk-!-margin-bottom-9">
     <header>
-      <h3 class="govuk-heading-m">There are checks that need more information</h3>
+      <h3 class="govuk-heading-m">There are tasks that need more information</h3>
     </header>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
@@ -211,21 +211,21 @@ related or not (i.e supply teacher)
 {{ govukTabs({
   items: [
     {
-      label: "Checks",
-      id: "checks",
+      label: "Tasks",
+      id: "tasks",
       panel: {
-        html: checksHtml
+        html: tasksHtml
       }
     },
     {
-      label: "Notes",
-      id: "notes",
+      label: "Notes and support",
+      id: "notesAndStupport",
       panel: {
         html: claimNotesHtml
       }
     },
     {
-      label: "Claim Amendments",
+      label: "Claim amendments",
       id: "claimAmendments",
       panel: {
         html: claimAmendmentsHtml

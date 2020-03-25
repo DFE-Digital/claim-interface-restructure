@@ -89,19 +89,20 @@ related or not (i.e supply teacher)
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="flash-card govuk-!-margin-bottom-9">
-      <header>
-        <h3 class="govuk-heading-m">This claim needs to go through the support process</h3>
-      </header>
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <p>There are tasks that have been marked as needing more
-          information. </p>
-          <p>Go to the <a href="#">notes tab</a> and follow the support process,
-          before making a decision on this claim.</a>
+      <div class="flash-card govuk-!-margin-bottom-9">
+        <header>
+          <h3 class="govuk-heading-m">This claim needs to go through the support process</h3>
+        </header>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <p>This claim has a support ticket assigned to it for the student
+            loan check.</p>
+            <p>Review the <a href="{{ data['student-loan-task-zendesk-url']}}">View
+            the support ticket</a> and <a href="#">notes attached to this claim</a>
+            before completing this task.</a>
+          </div>
         </div>
       </div>
-    </div>
 
       <ol class="app-task-list">
         <li>
@@ -237,27 +238,47 @@ related or not (i.e supply teacher)
 <div class="govuk-grid-row">
  <div class="govuk-grid-column-two-thirds">
       <h2 class="app-task-list__section">
-        Support Ticket
+        Support Ticket <a href="#" class="govuk-link govuk-body">change ticket URL</a>
       </h2>
-      <span class="govuk-hint">
-        Create a ticket on Zendesk and enter the URL here.
-      </span>
-      {{ govukInput({
-        id: "ticketURL",
-        name: "ticketURL"
-      }) }}
+      <a href="{{ data["ticketURL"] }}" class="govuk-link">{{ ticketURL}}</a>
 
       <h2 class="app-task-list__section">
         Claim Notes
       </h2>
+
+      <div class="hmcts-timeline">
+        <div class="hmcts-timeline__item">
+          <section>
+              <p class="govuk-body">Claimant sent over a scan of their studnet
+              loan statement, it shows they paid &pound;1643. I will amend the
+              claim to reflect that then approve it with the new claim amount.</p>
+          </section>
+
+          <p class="hmcts-timeline__description"> by Rich Cooley on 24 March 2020 11:47am</p>
+        </div>
+        <div class="hmcts-timeline__item">
+          <section>
+              <p class="govuk-body">Claim amount is above the threshold based on
+              our calculations. I will contact the claimant on Zendesk and ask
+              for proof that they paid &pound;1500 last year.</p>
+          </section>
+
+          <p class="hmcts-timeline__description"> by Tekin Suleyman on 11 March 2020 1:05pm</p>
+        </div>
+    </div>
+
+      <h3 class="app-task-list__section">
+        Add note
+      </h3>
       <span class="govuk-hint">
-        Enter a breif decsription of the problem/steps take to resolve the problem.
+        Write a brief update. Do not include any personal data about the
+        claimant.
       </span>
-      <textarea class="govuk-textarea" id="claimNotes" name="claimNotes" rows="12" ></textarea>
+      <textarea class="govuk-textarea" id="claimNotes" name="claimNotes" rows="5" ></textarea>
 
       {{ govukButton({
-        text: "Save Support Information",
-        classes: "govuk-button--secondary"
+        text: "Add note",
+        classes: "govuk-button"
       }) }}
     </div>
   </div>
