@@ -110,22 +110,6 @@ related or not (i.e supply teacher)
         </div>
     </dl>
 
-
- {% if data['ticketURL'] %}
-      <div class="flash-card govuk-!-margin-bottom-9">
-        <header>
-          <h3 class="govuk-heading-m">This claim has a support ticket assigned</h3>
-        </header>
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-            <p>This claim has a support ticket assigned to it for the student loan. Check it's current state before completing this task.</p>
-            <p><a href="{{ data['student-loan-task-zendesk-url']}}">View the support ticket</a></p>
-          </div>
-        </div>
-      </div>
-{% endif %}
-
-
     <form class="new_check" id="claim_check_form" action="/claim/student-loan/student-loan" accept-charset="UTF-8" method="post">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
@@ -147,30 +131,15 @@ related or not (i.e supply teacher)
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="loanAmount2" name="loanAmount" type="radio" value="No">
                     <label class="govuk-label govuk-radios__label" for="loanAmount2">
-                      No
+                      No, mark check as failed
                     </label>
                   </div>
                   <div class="govuk-radios__divider">or</div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="loanAmount3" name="loanAmount" type="radio" value="text" data-aria-controls="conditional-loanAmount3">
                     <label class="govuk-label govuk-radios__label" for="loanAmount3">
-                      Start support process
+                      Flag this check as needing investigation and continue checking the claim
                     </label>
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-loanAmount3">
-                    <div class="govuk-form-group">
-                    <label class="govuk-label" for="ticketURL">
-                        Link to support ticket
-                      </label>
-                      <span class="govuk-hint">
-                        If you need further evidence to answer this question you
-                        can <a href="https://additional-teaching-payment.zendesk.com/agent/tickets/new/1" target="_blank">
-                        raise a support ticket <span class="govuk-visually-hidden">opens in a new window,</span></a>.
-                        <br><br>Then paste the URL of the ticket in the text box below.
-                      </span>
-                      <input class="govuk-input" id="ticketURL" name="ticketURL" type="url" placeholder="https://" value="{{ data['ticketURL']}}">
-                    </div>
-
                   </div>
                 </div>
               </div>

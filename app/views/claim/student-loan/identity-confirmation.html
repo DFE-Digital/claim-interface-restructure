@@ -110,17 +110,27 @@ related or not (i.e supply teacher)
                 </legend>
 
                 <p class="govuk-body-l">The claimant did not complete GOV.UK Verify. Refer to the <a class="govuk-link" href="https://docs.google.com/document/d/1wZh68_RV_FTJLxXIDPr3XFtJHW3vRgiXGaBDUo1Q1ZU">Confirming a claimant's identity playbook</a>.</p>
+                <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="matchingDetailsCheck1" name="matchingDetailsCheck" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="matchingDetailsCheck1">
+                    Yes
+                  </label>
+                </div>
 
-
-                <div class="govuk-radios govuk-radios--inline">
-                  <input type="hidden" name="check[result]" id="check_result">
+                <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" type="radio" value="approved" name="check[result]" id="check_result_approved">
-                    <label class="govuk-label govuk-radios__label" for="check_result_approved">Yes</label>
+                    <input class="govuk-radios__input" id="matchingDetailsCheck2" name="matchingDetailsCheck" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="matchingDetailsCheck2">
+                      No, mark check as failed
+                    </label>
                   </div>
+                  <div class="govuk-radios__divider">or</div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" type="radio" value="rejected" name="check[result]" id="check_result_rejected">
-                    <label class="govuk-label govuk-radios__label" for="check_result_rejected">No</label>
+                    <input class="govuk-radios__input" id="matchingDetailsCheck3" name="matchingDetailsCheck" type="radio" value="text" data-aria-controls="conditional-loanAmount3">
+                    <label class="govuk-label govuk-radios__label" for="matchingDetailsCheck3">
+                      Flag this check as needing investigation and continue checking the claim
+                    </label>
                   </div>
                 </div>
               </fieldset>

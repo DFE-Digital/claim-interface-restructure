@@ -89,6 +89,25 @@ related or not (i.e supply teacher)
 {% set checksHtml %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+  <div class="flash-card govuk-!-margin-bottom-9">
+    <header>
+      <h3 class="govuk-heading-m">There are checks that need more information</h3>
+    </header>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <ul>
+          <li>CHECK 1 needs more info</li>
+          <li>CHECK 2 needs more info</li>
+          <li> find example on dev where a check has a no against it</li>
+        </ul>
+
+        <p>Go to the <a href="#">notes tab</a> and follow the support process,
+        before making a decision on this claim.</a>
+      </div>
+    </div>
+  </div>
+
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -110,21 +129,7 @@ related or not (i.e supply teacher)
     <form class="new_check" id="claim_check_form" action="/claims" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GitCei0zjGIa3F0VUatPhywrNAvAvIw75CgIevd9XH98k8acSkdQ5Y20YO5P0sbtH7aM/Q/HmIFSqEHyzrMmTQ==">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
-          <div class="govuk-error-summary govuk-error-subtle" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-            <h2 class="govuk-error-summary__title" id="error-summary-title">
-              Some checks have not yet been completed
-            </h2>
-            <div class="govuk-error-summary__body">
-              <ul class="govuk-list govuk-error-summary__list">
-                <li>
-                  <a href="#passport-issued-error">Check qualification information</a>
-                </li>
-                <li>
-                  <a href="#postcode-error">Check employment information</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+
           <div class="govuk-radios govuk-radios--inline">
             <input type="hidden" name="check[result]" id="check_result">
             <div class="govuk-radios__item">

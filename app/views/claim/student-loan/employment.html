@@ -111,16 +111,27 @@ related or not (i.e supply teacher)
                 Does the claimant’s previous and current schools match the above information from their claim?
               </h3>
             </legend>
-
-            <div class="govuk-radios govuk-radios--inline">
-              <input type="hidden" name="check[result]" id="check_result">
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" type="radio" value="approved" name="check[result]" id="check_result_approved">
-                <label class="govuk-label govuk-radios__label" for="check_result_approved">Yes</label>
+                <input class="govuk-radios__input" id="employmentCheck1" name="employmentCheck" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="employmentCheck1">
+                  Yes
+                </label>
               </div>
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" type="radio" value="rejected" name="check[result]" id="check_result_rejected">
-                <label class="govuk-label govuk-radios__label" for="check_result_rejected">No</label>
+                <input class="govuk-radios__input" id="employmentCheck2" name="employmentCheck" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="employmentCheck2">
+                  No, mark check as failed
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="employmentCheck3" name="employmentCheck" type="radio" value="text" data-aria-controls="conditional-loanAmount3">
+                <label class="govuk-label govuk-radios__label" for="employmentCheck3">
+                  Flag this check as needing investigation and continue checking the claim
+                </label>
               </div>
             </div>
           </fieldset>

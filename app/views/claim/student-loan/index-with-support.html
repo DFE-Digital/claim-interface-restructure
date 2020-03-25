@@ -89,6 +89,20 @@ related or not (i.e supply teacher)
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <div class="flash-card govuk-!-margin-bottom-9">
+      <header>
+        <h3 class="govuk-heading-m">This claim needs to go through the support process</h3>
+      </header>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <p>There are checks that have been marked as needing more
+          information. </p>
+          <p>Go to the <a href="#">notes tab</a> and follow the support process,
+          before making a decision on this claim.</a>
+        </div>
+      </div>
+    </div>
+
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
@@ -131,6 +145,9 @@ related or not (i.e supply teacher)
                   Check student loan amount
                 </a>
               </span>
+
+              <strong class="govuk-tag app-task-list__task-completed govuk-tag--inactive" id="company-information-completed ">Support</strong>
+
             </li>
           </ul>
         </li>
@@ -222,16 +239,21 @@ related or not (i.e supply teacher)
       <h2 class="app-task-list__section">
         Support Ticket
       </h2>
-      <a href="{{ data["ticketURL"] }}" class="govuk-link">{{ ticketURL}}</a>
+      <span class="govuk-hint">
+        Create a ticket on Zendesk and enter the URL here.
+      </span>
+      {{ govukInput({
+        id: "ticketURL",
+        name: "ticketURL"
+      }) }}
 
       <h2 class="app-task-list__section">
         Claim Notes
       </h2>
       <span class="govuk-hint">
-        Enter a breif decsription of the problem/steps take to resolve the problem
-        in the format Initals - Date - Message
+        Enter a breif decsription of the problem/steps take to resolve the problem.
       </span>
-      <textarea class="govuk-textarea" id="claimNotes" name="claimNotes" rows="12" >{{ claimNotes }}</textarea>
+      <textarea class="govuk-textarea" id="claimNotes" name="claimNotes" rows="12" ></textarea>
 
       {{ govukButton({
         text: "Save Support Information",
