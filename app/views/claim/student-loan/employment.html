@@ -115,7 +115,7 @@ related or not (i.e supply teacher)
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="employmentCheck1" name="employmentCheck" type="radio" value="Yes">
                 <label class="govuk-label govuk-radios__label" for="employmentCheck1">
-                  Yes
+                  Yes, the task has passed
                 </label>
               </div>
 
@@ -123,14 +123,14 @@ related or not (i.e supply teacher)
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="employmentCheck2" name="employmentCheck" type="radio" value="No">
                 <label class="govuk-label govuk-radios__label" for="employmentCheck2">
-                  No, mark check as failed
+                  No, the task has failed
                 </label>
               </div>
               <div class="govuk-radios__divider">or</div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="employmentCheck3" name="employmentCheck" type="radio" value="text" data-aria-controls="conditional-loanAmount3">
                 <label class="govuk-label govuk-radios__label" for="employmentCheck3">
-                  Flag this check as needing investigation and continue checking the claim
+                  More information is required via the support process
                 </label>
               </div>
             </div>
@@ -147,9 +147,11 @@ related or not (i.e supply teacher)
  <div class="govuk-grid-column-two-thirds">
       <h2 class="app-task-list__section">
         Support Ticket
+        <span class="govuk-body-m">
+          <a class="govuk-link" href="change-ticket-URL">Change ticket URL</a>
+        </span>
       </h2>
-
-      <input class="govuk-input" id="ticketURL" name="ticketURL" type="text" value="{{ data["ticketURL"] }}">
+      <a href="{{ data["ticketURL"] }}" class="govuk-link">{{ ticketURL}}</a>
 
       <h2 class="app-task-list__section">
         Claim Notes

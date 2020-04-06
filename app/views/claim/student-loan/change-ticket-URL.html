@@ -1,0 +1,112 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Viewing student loan for claim ABN7HA for student loans
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    serviceName: serviceName,
+    serviceUrl: "/",
+    navigation: [
+      {
+        href: "/claims",
+        text: "View claims",
+        attributes: {
+          "data-install": "View claims"
+        }
+      },
+      {
+        href: "/admin/claims/search",
+        text: "Search",
+        attributes: {
+          "data-tutorials": "Search"
+        }
+      },
+      {
+        href: "/admin/payroll_runs",
+        text: "Payroll",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/policy_configurations",
+        text: "Open/close a service",
+        attributes: {
+          "data-about": "Payroll"
+        }
+      },
+      {
+        href: "/admin/auth/sign-out",
+        text: "Sign out",
+        attributes: {
+          "data-about": "Sign out"
+        }
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% set service_name = "Student Loans (2019/2020)" %}
+{% set reference = "ABN7HA" %}
+{% set check_title = "Student loan amount" %}
+{% set trn = "2783017" %}
+{% set name = "Fred Smith" %}
+{% set dob = "21 August 1979" %}
+{% set email = "freddysmith@gmail.com" %}
+{% set ticketURL = "https://additional-teaching-payment.zendesk.com/agent/tickets/1234" %}
+{% set claimNotes = "Spoke with claimant on 13/01, started working in the school sept 18
+
+Salary between sept 18 and Apr 19 - £XX, XXX. He can't remember how he calculated repayments but thinks he probably added together payslips
+
+{SO NAME} - HL data only available from July/18, May need another Loan to high call to find out if remaining FY18/19 income (April18-June/18) is teaching
+
+related or not (i.e supply teacher)
+
+3 March 2020 - loan too high email sent, reply due 10 March
+
+4 March - reply received with repayments totalling £331. Have asked claimant to confirm his claim amount. Awaiting reply.
+
+6 March - reply received from claimant confirming £331 is correct amount. Claimant will need to re-apply.
+
+10 March  agreed that a developer could ammend the claim. Ammended and approved. KB" %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form class="new_check" id="claim_check_form" action="/claim/student-loan/index" accept-charset="UTF-8" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+              <h1 class="govuk-heading-l govuk-!-margin-0" for="supportTicketUrl">
+                What is this claim's support ticket URL?
+              </h1>
+            </legend>
+
+            <div class="govuk-form-group">
+              <input class="govuk-input" id="supportTicketUrl" name="supportTicketUrl" type="text" value="{{ ticketURL}}">
+            </div>
+          </div>
+        </fieldset>
+        <input type="submit" name="commit" value="Save ticket URL" class="govuk-button" data-disable-with="Save ticket URL">
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+  </div>
+
+{% endblock %}

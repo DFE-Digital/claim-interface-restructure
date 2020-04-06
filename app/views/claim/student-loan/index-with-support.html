@@ -238,22 +238,20 @@ related or not (i.e supply teacher)
  <div class="govuk-grid-column-two-thirds">
       <h2 class="app-task-list__section">
         Support Ticket
+        <span class="govuk-body-m">
+          <a class="govuk-link" href="change-ticket-URL">Change ticket URL</a>
+        </span>
       </h2>
-      <span class="govuk-hint">
-        Create a ticket on Zendesk and enter the URL here.
-      </span>
-      {{ govukInput({
-        id: "ticketURL",
-        name: "ticketURL"
-      }) }}
+      <a href="{{ data["ticketURL"] }}" class="govuk-link">{{ ticketURL}}</a>
 
       <h2 class="app-task-list__section">
         Claim Notes
       </h2>
       <span class="govuk-hint">
-        Enter a breif decsription of the problem/steps take to resolve the problem.
+        Enter a breif decsription of the problem/steps take to resolve the problem
+        in the format Initals - Date - Message
       </span>
-      <textarea class="govuk-textarea" id="claimNotes" name="claimNotes" rows="12" ></textarea>
+      <textarea class="govuk-textarea" id="claimNotes" name="claimNotes" rows="12" >{{ claimNotes }}</textarea>
 
       {{ govukButton({
         text: "Save Support Information",
